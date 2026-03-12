@@ -1,6 +1,7 @@
 # Email Management Strategy — Recommendations
 
 *Generated from analysis of 43,035 unique messages (Nov 2023 – Feb 2026)*
+*Includes linguistic pattern analysis of 29,095 human-written messages*
 
 ---
 
@@ -15,6 +16,32 @@ The Executive Director's inbox processes **~58 messages/day** (median 54, spikes
 - **Median reply time: 2.5 hours** — P90 is 3.3 days (some threads go cold)
 
 The real burden isn't spam or newsletters — it's the **31,748 human messages** requiring read + decide + act.
+
+### What the Human Messages Actually Look Like
+
+Linguistic analysis of 29,095 human-written messages reveals distinct communication patterns:
+
+| Communication Type | Volume | Daily Avg | % of Human Mail |
+|-------------------|--------|-----------|-----------------|
+| Uncategorized (complex/mixed intent) | 14,391 | 19.4 | 49.5% |
+| Escalation / urgent | 4,609 | 6.2 | 15.8% |
+| Action requests ("please review/approve/send") | 4,347 | 5.9 | 14.9% |
+| Scheduling (meetings, availability) | 2,639 | 3.6 | 9.1% |
+| Acknowledgments ("thanks, got it, will do") | 2,481 | 3.4 | 8.5% |
+| FYI / informational (no action needed) | 2,398 | 3.2 | 8.2% |
+| Follow-ups ("checking in, circling back") | 835 | 1.1 | 2.9% |
+| Decision requests ("need your approval") | 373 | 0.5 | 1.3% |
+| Delegation ("can you take the lead on") | 212 | 0.3 | 0.7% |
+| Status updates / reports | 144 | 0.2 | 0.5% |
+
+**Key structural findings:**
+- **37% are medium-length** (150-400 words), **34% are long** (400-800 words) — this is a text-heavy inbox
+- **44% contain at least one question** — many are multi-question messages (5% have 4+ questions)
+- **36% open with a greeting** but only **3.5% have formal sign-offs** — fast informal communication culture
+- **12.5% reference attachments** — significant attachment-heavy workflow
+- **82% of acknowledgments are replies** (not originals) — most "thanks" messages are responses
+- **62% of action requests appear in reply chains** — requests often emerge mid-thread, not as fresh messages
+- **Sent items skew heavily toward escalation** (1,900 sent) — the ED sends urgent/time-sensitive messages more than any other type
 
 ---
 
@@ -104,6 +131,66 @@ Combine the Outlook rules (Tier 1) with a **daily briefing email** sent at 7am:
 
 ---
 
+## Template & Quick-Response Opportunities
+
+**Estimated savings: ~4 hours/week (215 hours/year)**
+
+Linguistic analysis identified 8 high-volume communication patterns where templates or AI-assisted drafting could dramatically reduce handling time:
+
+### 1. Action Request Response (~6/day, saves 72h/year)
+Incoming requests to review, approve, sign, or send something. These follow a predictable pattern: someone asks the ED to do X by Y.
+
+**Template:** *"Thanks for sending. I'll [review/approve/complete] by [DATE]. Please [send any additional context / coordinate with NAME]."*
+
+**Copilot use:** Extract the specific action requested and deadline, auto-draft a confirmation or delegation reply.
+
+### 2. Meeting Scheduling (~3.6/day, saves 66h/year)
+Availability requests and meeting coordination. Over half occur within reply chains (51%).
+
+**Template:** *"I'm available [TIMES]. [NAME] will send a calendar invite. / Let's use [SCHEDULING TOOL] to find a time."*
+
+**Copilot use:** Check calendar, draft availability reply with open time slots. This is Copilot's strongest use case.
+
+### 3. FYI Handling (~3.2/day, saves 29h/year)
+Messages explicitly marked as informational — "for your awareness," "just sharing," "no action needed."
+
+**Action:** Auto-file to a `Reading/FYI` folder. Include in a weekly digest rather than reading each one in real-time.
+
+### 4. Quick Acknowledgment (~3.4/day, saves 21h/year)
+Simple replies: "Thanks," "Got it," "Will do," "Sounds good." These are **82% reply messages** — the ED is confirming receipt.
+
+**Template:** One-click acknowledgment buttons: `✓ Got it` | `✓ Will review` | `✓ Thanks, will follow up by [DATE]`
+
+**Copilot use:** Auto-draft a contextual acknowledgment based on what was sent.
+
+### 5. Follow-Up (~1.1/day, saves 13h/year)
+"Circling back," "checking in," "any update?" messages. Two-thirds are replies in existing threads.
+
+**Template:** *"Following up on my [DATE] message about [TOPIC]. Could you provide an update by [DATE]?"*
+
+### 6. Decision Request (~0.5/day, saves 6h/year)
+Messages requiring approval or sign-off. These are **high-value, low-volume** — every one matters.
+
+**Action:** Flag in priority inbox. Don't template the response, but ensure these never get buried.
+
+### 7. Delegation (~0.3/day, saves 5h/year)
+Assigning ownership of tasks or projects.
+
+**Template:** *"I'd like you to take the lead on [TASK]. Context: [SUMMARY]. Please [report back by DATE / loop in NAME]."*
+
+### 8. Status Update (~0.2/day, saves 3h/year)
+Incoming reports and progress updates.
+
+**Action:** Auto-tag with topic keywords. Summarize for board prep and governance review.
+
+### Pattern Insight: The Escalation Signature
+
+The ED's **sent email** is dominated by escalation-type messages (1,900 sent vs. 2,709 received). This suggests the ED's primary email function is **pushing urgency through the organization** — forwarding with "please handle ASAP," flagging deadlines, escalating blocked items.
+
+This is the communication pattern where AI assistance has the **least** value (urgency requires human judgment) but where **better upstream systems** (task tracking, deadline dashboards, automated reminders) could reduce the need to escalate by email in the first place.
+
+---
+
 ## Recommended Implementation Roadmap
 
 ### Week 1: Foundation
@@ -134,6 +221,7 @@ Combine the Outlook rules (Tier 1) with a **daily briefing email** sent at 7am:
 | Metric | Value |
 |--------|-------|
 | Total unique messages analyzed | 43,035 |
+| Human messages linguistically analyzed | 29,095 |
 | Date range | Nov 2023 – Feb 2026 |
 | Average messages/day | 58 |
 | Median messages/day | 54 |
@@ -146,6 +234,22 @@ Combine the Outlook rules (Tier 1) with a **daily briefing email** sent at 7am:
 | Top sender domain | oregoned.org (16,043 msgs) |
 | Median reply time | 2.5 hours |
 | Unique sender domains | 805 |
+| Template savings potential | ~4.1h/week (215h/year) |
+| Messages with questions | 44.2% |
+| Messages referencing attachments | 12.5% |
+| Medium-to-long messages (150+ words) | 71.1% |
+
+---
+
+## Combined Savings Estimate
+
+| Strategy | Hours/Week Saved |
+|----------|-----------------|
+| Tier 1: Outlook rules (auto-file noise) | 0.4h |
+| Tier 2: Copilot (thread summaries, draft replies) | 2-3h |
+| Templates & quick-response patterns | 2-4h |
+| **Total potential reduction** | **~5-7h/week** |
+| **From 12.9h → ~6-8h/week** | **38-54% reduction** |
 
 ---
 
@@ -155,4 +259,5 @@ All analysis data is in `data/reports/`:
 - `corpus_stats.json` — Raw corpus statistics (Layer 3, safe to share)
 - `pattern_analysis.json` — Classification, time patterns, topics, network
 - `workload_model.json` — Workload estimates and reduction scenarios
+- `linguistic_analysis.json` — Communication intent, structure, and template opportunities
 - `strategy_recommendations.md` — This document
